@@ -1,0 +1,50 @@
+include ../mixins/all.pug
+
+block vars
+  - title = 'Site';
+
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title= title
+    meta(name='description', content=description ? description : '')
+    meta(name='keywords', content=keyword ? keyword : '')
+    meta(name='robots', content='index, follow')
+    meta(name='author', content='')
+    
+    meta(itemprop='name' content='Solatars NFT – Inspiration for Your Cyborg Self')
+    meta(itemprop='description' content='Solatars is a collection of 10,000 generative dope arts with over 140 traits across 8 categories that represent your cyborg-self invading the Solana blockchain.')
+    meta(itemprop='image' content='https://generator.solatars.com/images/solatars.png')
+    // Twitter
+    meta(name='twitter:card' content='summary')
+    meta(name='twitter:title' content='Solatars NFT – Inspiration for Your Cyborg Self')
+    meta(name='twitter:description' content='Solatars is a collection of 10,000 generative dope arts with over 140 traits across 8 categories that represent your cyborg-self invading the Solana blockchain.')
+    meta(name='twitter:site' content='@solatars')
+    meta(name='twitter:creator' content='@solatars')
+    meta(name='twitter:image:src' content='https://generator.solatars.com/images/solatars.png')
+    // Open Graph general (Facebook, Pinterest & Google+)
+    meta(name='og:title' content='Solatars NFT – Inspiration for Your Cyborg Self')
+    meta(name='og:description' content='Solatars is a collection of 10,000 generative dope arts with over 140 traits across 8 categories that represent your cyborg-self invading the Solana blockchain.')
+    meta(name='og:image' content='https://generator.solatars.com/images/solatars.png')
+    meta(name='og:url' content='https://generator.solatars.com')
+    meta(name='og:site_name' content='Solatars NFT – Inspiration for Your Cyborg Self')
+    meta(name='og:locale' content='en_US')
+    meta(name='og:type' content='website')
+    link(rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="16x16")
+    link(rel="preload" href="styles/main.min.css" as="style")
+    link(rel="preload" href="scripts/app.min.js" as="script")
+    -
+      const production = self.htmlWebpackPlugin.options.production
+    if production
+      style.
+        !{self.htmlWebpackPlugin.options.inline}
+    
+  body
+    //-[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]
+    noscript 
+      p JavaScript is off. Please enable to view full site.
+    include ../global/header.pug
+    block container

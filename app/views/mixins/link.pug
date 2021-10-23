@@ -1,0 +1,29 @@
+mixin link(title, href, text)
+  - if (typeof (text) === 'undefined') text = title
+  - if (typeof (href) === 'undefined') href = '#'
+  a(href=href, title=title)&attributes(attributes)
+    if block
+      block
+    else
+      != text
+mixin card(items)
+  each item in items
+    - var cls = ''
+    - if (item.status) cls = 'disabled'
+    .card--item(class=cls)
+      .card--img
+        img.lazyload(data-src=item.img src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==', alt=item.name)
+      if(item.status)
+        p.name!=item.name
+          i
+        p.status Claimed.
+      else
+        p.name!=item.name
+        p.status Never Claimed.
+      p
+        a.btn-primary(href="javascript:void(0);", title=item.name, data-btn-tweet) Tweet !{item.name}
+      p
+        if(item.status)
+          a.btn-second(href="javascript:void(0);", title="Claimed", data-btn-claim) Claimed
+        else
+          a.btn-second(href="javascript:void(0);", title="Claim", data-btn-claim) Claim

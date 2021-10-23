@@ -1,0 +1,11 @@
+{
+  "data": {
+    "bg": "https://minhvntn.github.io/canvasimg.github.io/images/BG-Solana_20.png",
+    "neck": "https://minhvntn.github.io/canvasimg.github.io/images/Neck-CollarRed_4.png",
+    "head": "https://minhvntn.github.io/canvasimg.github.io/images/Head-TeddyBlack_65.png",
+    "face": "https://minhvntn.github.io/canvasimg.github.io/images/Face-Cyborg_4.png",
+    "eyewear": "https://minhvntn.github.io/canvasimg.github.io/images/Eyewear-HUD_10.png",
+    "clothing": "https://minhvntn.github.io/canvasimg.github.io/images/Clothing-Gladiator_10.png",
+    "body": "https://minhvntn.github.io/canvasimg.github.io/images/Body-Rusty.png"
+  }
+}

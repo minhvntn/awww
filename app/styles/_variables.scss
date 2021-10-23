@@ -1,0 +1,35 @@
+// color
+$primary-color: #E3E3E3;
+$secondary-color: #A9302E;
+$white: #ffffff;
+// grid
+$screen-xxs: 320px;
+$screen-xs: 414px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xlg: 1200px;
+$screen-xxlg: 1920px;
+$screen-xs-up: ($screen-sm - 1px);
+$screen-sm-up: ($screen-md - 1px);
+$screen-md-up: ($screen-lg - 1px);
+$screen-hd-up: ($screen-xxlg - 1px);
+//typo
+$font-size-base: 16px;
+$font-thin: 100;
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semi-bold: 600;
+$font-bold: 700;
+$font-extra-bold: 800;
+$font-primary: 'Sora', -apple-system,
+'BlinkMacSystemFont',
+'Segoe UI',
+'Helvetica',
+'Arial',
+sans-serif,
+'Apple Color Emoji',
+'Segoe UI Emoji',
+'Segoe UI Symbol';
+$font-fontback: sans-serif;

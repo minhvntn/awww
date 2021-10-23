@@ -1,0 +1,39 @@
+.header {
+	padding: 50px 0;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: all .5s linear;
+	&.is-showing {
+		background: #000;
+    padding: 30px 0;
+	}
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.socials {
+	display: flex;
+	align-items: center;
+	a {
+		margin-left: 15px;
+		transition: all .3s;
+		&:hover {
+			opacity: .75;
+		}
+		&:first-child,
+		&:only-child {
+			margin-left: 0;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.socials a {
+		margin-left:30px;
+	}
+}

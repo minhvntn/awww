@@ -1,0 +1,247 @@
+// Note the * after the class name. This just selects everything after the initial
+.preload-transitions * {
+  // Dry this up a bit with SCSS variable
+  $null-transition: none !important;
+  -webkit-transition: $null-transition;
+  -moz-transition: $null-transition;
+  -ms-transition: $null-transition;
+  -o-transition: $null-transition;
+  transition: $null-transition;
+}
+html {
+  font-size: 14px;
+}
+
+html,
+body {
+  font-family: $font-primary;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  &:active,
+   :focus {
+    outline: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0 0 0 20px;
+  li {
+    margin-bottom: 15px;
+    word-break: break-word;
+  }
+}
+
+body {
+  background-color: #030018;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+
+main {
+  margin: 0 auto;
+  padding-top: 150px;
+  padding-bottom: 89px;
+  h1 {
+    padding: 0 20px 18px;
+  }
+  .content {
+    text-align: center;
+  }
+}
+.wrapper {
+  margin: 0 auto;
+}
+
+.form-search {
+  position: relative;
+  margin: 25px auto 35px;
+  i {
+    position: absolute;
+    left: 25px;
+    top: 16px;
+  }
+  input {
+    height: 56px;
+    font-size: 17px;
+    font-weight: 600;
+    padding-left: 46px;
+    border-radius: 46px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    outline: none;
+    color: #ffffff;
+    &:focus {
+      background-color: transparent;
+      border-color: #ffffff;
+      box-shadow: none;
+      color: #ffffff;
+    }
+  }
+}
+.form-control::placeholder {
+  color: #ffffff;
+  opacity: .3;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 40px;
+  margin-bottom: 80px;
+  &.hide {
+    display: none;
+  }
+  &--item {
+    opacity: 1;
+    transition: all .3s linear;
+    visibility: visible;
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &.disabled {
+      pointer-events: none;
+      .name {
+        i {
+          position: relative;
+          display: inline-block;
+          left: 10px;
+          width: 18px;
+          height: 18px;
+          background-image: linear-gradient(89.92deg,#016db0 0,#01ffca 100%);
+          border-radius: 100%;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 4px;
+            width: 5px;
+            height: 9px;
+            border: solid #080134;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+          }
+        }
+      }
+      .btn-primary {
+        background: rgba(1, 188, 190, 0.3);
+      }
+      .btn-second {
+        background: rgba(255, 255, 255, 0.2);
+        color: #080134;
+        &::after {
+          border-color: transparent;
+        }
+      }
+    }
+  }
+  .name {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+    margin-top: 12px;
+  }
+  .status {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    color: #FFFFFF;
+    opacity: 0.3;
+  }
+}
+.no-result {
+  text-align: center;
+  padding: 20px 0 76px;
+  &.hide {
+    display: none;
+  }
+}
+
+.box {
+  padding: 40px 5%;
+  text-align: center;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  p:first-child {
+    margin-bottom: 20px;
+  }
+  .btn-primary {
+    width: 255px;
+    margin: 0 auto;
+  }
+}
+
+@include tablet-up {
+  main {
+    padding-top: 212px;
+    padding-bottom: 89px;
+  }
+  .form-search {
+    width: 480px;
+    margin: 48px auto 65px;
+  }
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 54px;
+    row-gap: 56px;
+    .name {
+      font-size: 22px;
+      line-height: 33px;
+    }
+    .status {
+      font-size: 14px;
+      line-height: 19.6px;
+    }
+  }
+  .box {
+    padding: 40px 13%;
+    text-align: center;
+    .btn-primary {
+      width: 255px;
+    }
+    p {
+      font-size: 24px;
+      opacity: 0.8;
+      line-height: 38px;
+    }
+  }
+}
+
+@include desktop-up {
+  main {
+    padding-top: 212px;
+    padding-bottom: 89px;
+    h1 {
+      padding: 0 12% 18px;
+    }
+  }
+  .wrapper {
+    width: 867px;
+  }
+  .form-search {
+    width: 600px;
+    margin: 48px auto 65px;
+  }
+  .card {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 76px;
+  }
+}
